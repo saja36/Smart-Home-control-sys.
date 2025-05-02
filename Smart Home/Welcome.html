@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Interactive Smart Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #1C1F2B;
+      color: #FFFFFF;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .welcome-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(45deg,#35363a, #242a46 );
+      color: white;
+      opacity: 50%; /* بداية العناصر مخفية */
+      animation: fadeIn 3s forwards; /* تطبيق تأثير fade-in */
+    }
+
+    #loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(28, 31, 43, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #00C2FF;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+    /* تأثير الـ Fade-in */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px); /* بداية العنصر بعيد عن مكانه */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* العنصر يرجع لمكانه الطبيعي */
+      }
+    }
+
+    .welcome-container h1 {
+      font-size: 3rem;
+      color: #3388a1;
+      font-weight: bold;
+      margin-bottom: 20px;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    /* تأثير Hover على كلمة Welcome */
+    .welcome-container h1:hover {
+      color: #73cbe6; /* تغيير اللون للذهبي */
+      transform: scale(1.1); /* تكبير الكلمة شوية */
+    }
+
+    .welcome-container p {
+      font-size: 1.5rem;
+      color: #8b8d99;
+      margin-bottom: 30px;
+    }
+
+    .btn-custom {
+      background-color: #02181f;
+      color: #8b8d99;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    /* تأثير Hover على الزر */
+    .btn-custom:hover {
+      background-color: #3388a1;
+      color: #1C1F2B;
+      transform: scale(1.1); /* تكبير الزر شوية */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <div class="welcome-container">
+    <h1>Welcome to Smart Home</h1>
+    <p>A smart control system to improve your daily life. Log in to start controlling your devices and sensors.</p>
+    <a href="login.html" class="btn-custom">Log in</a>
+  </div>
+
+</body>
+</html>
