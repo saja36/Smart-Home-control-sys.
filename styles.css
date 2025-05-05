@@ -1,0 +1,310 @@
+/* ======= خلفية عامة وتنسيق أساسي ======= */
+body {
+  background-color: #1C1F2B;
+  color: #FFFFFF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ======= تنسيق عام للعناوين h ======= */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00C2FF;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #FFD700;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #A4FF00;
+}
+
+/* ======= شريط التنقل ======= */
+nav {
+  background-color: rgba(28, 31, 43, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+
+nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #00C2FF;
+}
+
+nav strong {
+  color: #FFD700;
+}
+
+/* ======= الحاوية الرئيسية ======= */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+/* ======= شبكة الكروت ======= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  /* الكود القديم */
+  background-color: #2C2F3C;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 194, 255, 0.3);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+/* الكي فريمز للأنيميشن */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* خلي كل كارت يتأخر شويه بسيطه في ظهوره */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+.card:nth-child(6) { animation-delay: 1.2s; }
+
+
+.card img {
+  width: 50px;
+  margin-bottom: 1rem;
+  filter: brightness(1.1);
+}
+
+.card i {
+  font-size: 50px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.card i:hover {
+  color: #00C2FF;
+}
+
+.card:hover {
+  background-color: #2D3342;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  border: 2px solid #00C2FF;
+}
+
+/* ======= الحقول ======= */
+.input-group {
+  margin-top: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #1C1F2B;
+  color: #FFFFFF;
+  border: 1px solid #A9B3C1;
+}
+
+/* ======= الأزرار ======= */
+button {
+  background-color: #00C2FF;
+  color: #1C1F2B;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #FFD700;
+  color: #000000;
+  box-shadow: 0 0 12px #FFD70088;
+}
+
+.alert-card {
+  background-color: #8B0000 !important;
+  border: 2px solid #FF0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+  color: white !important;
+  animation: pulseAlert 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseAlert {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  }
+}
+
+
+/* ======= العناوين وألوانها ======= */
+.title-main,
+.sensor-gas,
+.sensor-fire,
+.sensor-rain,
+.sensor-temp,
+.sensor-humidity,
+.sensor-light,
+.about-title,
+.why-choose-title,
+.contact-title {
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.title-main { color: #00C2FF; font-size: 1.8rem; }
+.sensor-gas { color: #FFD700; }
+.sensor-fire { color: #FF6B6B; }
+.sensor-rain { color: #4FD1FF; }
+.sensor-temp { color: #FF9900; }
+.sensor-humidity { color: #7CE0D3; }
+.sensor-light { color: #FFF89A; }
+.about-title { color: #FFD700; font-size: 1.6rem; }
+.why-choose-title { color: #00BFFF; font-size: 1.6rem; }
+.contact-title { color: #A4FF00; font-size: 1.6rem; }
+
+.title-main:hover,
+.sensor-gas:hover,
+.sensor-fire:hover,
+.sensor-rain:hover,
+.sensor-temp:hover,
+.sensor-humidity:hover,
+.sensor-light:hover,
+.about-title:hover,
+.why-choose-title:hover,
+.contact-title:hover {
+  text-shadow: 0 0 10px currentColor;
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+/* ======= أنيميشن عند تحميل الصفحة ======= */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-title {
+  opacity: 0;
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+.animated-title.delay-1 { animation-delay: 0.2s; }
+.animated-title.delay-2 { animation-delay: 0.4s; }
+.animated-title.delay-3 { animation-delay: 0.6s; }
+.animated-title.delay-4 { animation-delay: 0.8s; }
+.animated-title.delay-5 { animation-delay: 1s; }
+.animated-title.delay-6 { animation-delay: 1.2s; }
+
+/* ======= نصوص بارزة وواضحة على الخلفيات الغامقة ======= */
+.bright-text {
+  color: #FFFFFF !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ======= نصوص نيون/لامعة ======= */
+.glow-text {
+  color: #00C2FF;
+  text-shadow: 0 0 10px #00C2FF, 0 0 20px #00C2FF;
+  font-weight: bold;
+}
+
+/* ======= نص يظهر ويختفي باستمرار ======= */
+.fading-text {
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ========= Responsive Tweaks ========= */
+
+/* تعديل توزيع الكروت في الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* تعديل حجم العناوين للموبايل */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  input, textarea, button {
+    font-size: 1rem;
+  }
+}
+

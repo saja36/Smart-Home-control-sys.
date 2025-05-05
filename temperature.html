@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Control Temperature</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <style>
+    .logout-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    }
+
+    .logout-btn:hover {
+      background-color: #cc0000;
+      box-shadow: 0 0 20px rgba(255, 50, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Smart Home</strong>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="light.html">Light</a></li>
+      <li><a href="humidity.html">Humidity</a></li>
+      <li><a href="#">Temperature</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 class="title-main animated-title delay-1">Temperature Sensor Control</h1>
+
+    <div class="card animated-title delay-2">
+      <h2>Current Temperature Value</h2>
+      <p id="temperature-value" class="glow-text">23°C</p>
+
+      <div class="input-group">
+        <input type="number" id="temperature" placeholder="Enter new value (°C)" />
+      </div>
+
+      <button onclick="updateTemperatureData()">Update Temperature</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</body>
+</html>
